@@ -9,6 +9,10 @@ const resolvers = {
     track: (_, { id }, { dataSources }) => {
       return dataSources.trackAPI.getTrack(id);
     },
+    // get a single module by ID, for the module page
+    module: (_, { id }, { dataSources }) => {
+      return dataSources.trackAPI.getModule(id);
+    },
   },
   Track: {
     author: ({ authorId }, _, { dataSources }) => {
@@ -19,6 +23,8 @@ const resolvers = {
       return dataSources.trackAPI.getTrackModules(id);
     },
   },
+
+
 };
 
 module.exports = resolvers;
